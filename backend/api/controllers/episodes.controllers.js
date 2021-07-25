@@ -28,6 +28,7 @@ module.exports.getAllEpisodes = function (req, res) {
     //     return;
     // }
 
+
     Episodes
         .find()
         .exec(function (err, docs) {
@@ -43,6 +44,8 @@ module.exports.getAllEpisodes = function (req, res) {
                     .json(docs);
             }
         });
+
+    mongoose.set('debug', true);
 }
 
 module.exports.getAnEpisode = function (req, res) {

@@ -1,0 +1,16 @@
+.card {
+    background-color: #CA2222;
+}
+
+.container {
+    margin-top: 110px;
+}
+
+pagination-controls/deep/.ngx-pagination .current{
+    background-color: #CA2222;
+}
+
+.row input{
+    margin-bottom: 15px;
+    margin-left: 10px;
+}

@@ -1,0 +1,19 @@
+<div class="navbar navbar-expand-sm fixed-top" style="background-color: #020202;">
+    <a class="navbar-brand" href="/">
+        <img src="../logo.png" height="75" alt="Mr Robot Database" style="color: #fff;">
+    </a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/episodes' style="color:#fff;">All Episodes</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
+            <a class="nav-link" routerLink='/profile' style="color:#fff;">Profile</a>
+        </li>
+    </ul>
+    <form class="form-inline ml-auto">
+        <button class="btn btn-outline-light" *ngIf="!authService.isAuthenticated()" (click)="authService.login()">
+Login</button>
+        <button class="btn btn-outline-light" *ngIf="authService.isAuthenticated()" (click)="authService.logout()">
+Logout</button>
+    </form>
+</div>

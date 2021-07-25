@@ -1,0 +1,19 @@
+<div class="container" style="margin-top:100px">
+    <div class="row">
+        <div class="col-sm-12">
+            <div *ngFor="let review of webService.reviews | async">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        Review by {{ review.username }} on {{ review.date | date }}
+                    </div>
+                    <div class="card-body">
+                        {{ review.text }}
+                    </div>
+                    <div class="card-footer">
+                        {{ review.stars }} stars
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

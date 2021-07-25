@@ -1,0 +1,52 @@
+<div class="jumbotron">
+    <h2>Mr Robot Database</h2>
+    <h4>Computer Repair with a Smile</h4>
+</div>
+
+<span *ngIf="authService.isAuthenticated()">
+<h2>Please add an Episode</h2>
+<form [formGroup]="episodeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" class="form-control" formControlName="name" [ngClass]="{'error': isInvalid('name')}" [(ngModel)]="episode.name">
+    </div>
+    <div class="form-group">
+        <label for="season">Season</label>
+        <input type="text" id="season" name="season" class="form-control" formControlName="season" [ngClass]="{ 'error': isInvalid('season') }"
+            [(ngModel)]="episode.season">
+    </div>
+       <div class="form-group">
+        <label for="episodeNumber">Episode Number</label>
+        <input type="text" id="episodeNumber" name="episodeNumber" class="form-control" formControlName="episodeNumber" [ngClass]="{ 'error': isInvalid('episodeNumber') }"
+            [(ngModel)]="episode.episodeNumber">
+    </div>
+       <div class="form-group">
+        <label form="airdate">Airdate</label>
+        <input type="text" id="airdate" name="airdate" class="form-control" formControlName="airdate" [ngClass]="{ 'error': isInvalid('airdate') }"
+            [(ngModel)]="episode.airdate">
+    </div>
+       <div class="form-group">
+        <label for="runtime">Run Time</label>
+        <input type="text" id="runtime"  name="runtime" class="form-control" formControlName="runtime" [ngClass]="{ 'error': isInvalid('runtime') }"
+            [(ngModel)]="episode.runtime">
+    </div>
+       <div class="form-group">
+           <label for="image">Image (Insert URL)</label>
+        <input type="url" id="image" name="image" class="form-control" formControlName="image" [ngClass]="{ 'error': isInvalid('image') }"
+            [(ngModel)]="episode.image">
+    </div>
+    <div class="form-group">
+        <label for="summary">Episode Summary</label>
+        <textarea id="summary" rows="3" name="summary" class="form-control" formControlName="summary" [ngClass]="{ 'error': isInvalid('summary') }"
+            [(ngModel)]="episode.summary"></textarea>
+    </div>
+    <span *ngIf="isIncomplete()">You must complete all fields</span>
+<button *ngIf="!isIncomplete()" type="submit" class="btn btn-primary">Submit</button>
+</form>
+</span>
+
+<span *ngIf="!authService.isAuthenticated()">
+ <h5 class="text" class="authentication">
+ Please log in to add an episode</h5>
+ </span>
+<div>

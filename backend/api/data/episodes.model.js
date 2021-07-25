@@ -31,4 +31,4 @@ var episodeSchema = new mongoose.Schema({
     reviews: [reviewSchema]
 });
 
-mongoose.model('Episodes', episodeSchema, 'episodes');
+mongoose.model('Episodes', episodeSchema, 'Episodes');

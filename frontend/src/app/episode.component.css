@@ -1,0 +1,27 @@
+.error { 
+    background-color: #fff0f0; 
+}
+
+.card {
+    background-color: #CA2222;
+    border-color: #CA2222;
+}
+
+#review-card {
+    background-color: #020202;
+    border-color: #020202;
+    color: #fff;
+}
+
+pagination-controls/deep/.ngx-pagination .current{
+    background-color: #CA2222;
+}
+
+.authentication {
+    color: #CA2222;
+}
+
+.row input{
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
